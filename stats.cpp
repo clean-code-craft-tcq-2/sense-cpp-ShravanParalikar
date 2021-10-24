@@ -2,7 +2,6 @@
 
 Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     //Implement statistics here
-    
     Stats computedStats;
 
     int size = vect.size();
