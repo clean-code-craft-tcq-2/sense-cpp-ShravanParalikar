@@ -2,12 +2,7 @@
 
 Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     //Implement statistics here
-    struct Stats
-   {
-    float average;
-    float max;
-    float min;
-   };
+    
     Stats computedStats;
 
     int size = vect.size();
