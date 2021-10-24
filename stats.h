@@ -7,13 +7,13 @@ struct Stats
     float min;
    };
 
-typedef struct EmailAlert {
+struct EmailAlert {
     bool emailSent ;
-}IAlerter;
+};
 
-typedef struct LEDAlert {
+struct LEDAlert {
     bool ledGlows ;
-}IAlerter;
+};
 
 typedef struct IAlerter;
 
