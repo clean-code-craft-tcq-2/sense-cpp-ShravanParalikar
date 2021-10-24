@@ -1,6 +1,6 @@
 #include "stats.h"
 
-Stats Statistics::ComputeStatistics(const std::vector<___>&vect ) {
+Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     //Implement statistics here
     Stats computedStats;
 
