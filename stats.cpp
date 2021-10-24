@@ -31,3 +31,25 @@ Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     }
     
 }
+
+void StatsAlerter::checkAndAlert(const std::vector<float>&vect ) {
+   
+    if ( vect.empty() )
+    {
+      alerter[0].emailSent = false;
+      alerter[1].ledGlows = false;
+      return;
+    }
+    float max =  *max_element(vect.begin(),vect.end());
+    
+    if (max > maxThres) {
+        alerter[0].emailSent = true;
+        alerter[1].ledGlows = true;
+    }
+    else
+    {
+        alerter[0].emailSent = false;
+        alerter[1].ledGlows = false;
+    }
+    return;
+}
