@@ -15,7 +15,10 @@ struct LEDAlert {
     bool ledGlows ;
 };
 
-typedef struct IAlerter;
+struct IAlerter{
+   EmailAlert ea;
+   LEDAlert la;
+};
 
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>&vect );
