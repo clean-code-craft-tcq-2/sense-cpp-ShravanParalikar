@@ -36,20 +36,20 @@ void StatsAlerter::checkAndAlert(const std::vector<float>&vect ) {
    
     if ( vect.empty() )
     {
-      alerter[0]->emailSent = false;
-      alerter[1]->ledGlows = false;
+      alerter[0]->ea.emailSent = false;
+      alerter[1]->la.ledGlows = false;
       return;
     }
     float max =  *max_element(vect.begin(),vect.end());
     
     if (max > maxThres) {
-        alerter[0]->emailSent = true;
-        alerter[1]->ledGlows = true;
+        alerter[0]->ea.emailSent = true;
+        alerter[1]->la.ledGlows = true;
     }
     else
     {
-        alerter[0]->emailSent = false;
-        alerter[1]->ledGlows = false;
+        alerter[0]->ea.emailSent = false;
+        alerter[1]->la.ledGlows = false;
     }
     return;
 }
