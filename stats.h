@@ -15,13 +15,13 @@ struct LEDAlert {
     bool ledGlows ;
 };
 
-typedef sturct IAlerter;
+typedef struct IAlerter;
 
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>&vect );
 }
 
-Class StatsAlerter
+class StatsAlerter
 {
    public:
       const float maxThres;
