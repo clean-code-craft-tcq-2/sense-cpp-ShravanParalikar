@@ -32,24 +32,24 @@ Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     
 }
 
-void StatsAlerter::checkAndAlert(const std::vector<float>&vect ) {
-   
-    if ( vect.empty() )
+bool emailAlertCallCount {false};
+bool ledAlertCallCount   {true};
+
+void checkAndAlert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
+{
+    if(computedStats.max > maxThreshold)
     {
-      alerter[0]->ea.emailSent = false;
-      alerter[1]->la.ledGlows = false;
-      return;
+        alerters[0]();
+	    alerters[1]();
     }
-    float max =  *max_element(vect.begin(),vect.end());
-    
-    if (max > maxThres) {
-        alerter[0]->ea.emailSent = true;
-        alerter[1]->la.ledGlows = true;
-    }
-    else
-    {
-        alerter[0]->ea.emailSent = false;
-        alerter[1]->la.ledGlows = false;
-    }
-    return;
+}
+
+void emailAlerter()
+{
+    emailAlertCallCount{true};
+}
+
+void ledAlerter()
+{
+   ledAlertCallCount{true};
 }
