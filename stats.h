@@ -23,16 +23,12 @@ struct IAlerter{
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>&vect );
 }
+typedef void (*funcptr)();
+void checkAndAlert(float maxThreshold, funcptr IAlerter[], struct Stats computedStats);
 
-class StatsAlerter
-{
-   public:
-      const float maxThres;
-      const std::vector<IAlerter*> alerter;
-      StatsAlerter(const float, const std::vector<IAlerter*>);
-      
-      void checkAndAlert(const std::vector<float>&vect );
-};
+extern bool emailAlertCallCount;
+extern bool ledAlertCallCount;
+void emailAlerter();
+void ledAlerter();
 
-StatsAlerter::StatsAlerter(const float maxThreshold, const std::vector<IAlerter*> alerter) 
-             : maxThres(maxThreshold), alerter(alerter) {}
+
