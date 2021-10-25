@@ -7,18 +7,7 @@ struct Stats
     float min;
    };
 
-struct EmailAlert {
-    bool emailSent ;
-};
 
-struct LEDAlert {
-    bool ledGlows ;
-};
-
-struct IAlerter{
-   EmailAlert ea;
-   LEDAlert la;
-};
 
 namespace Statistics {
     Stats ComputeStatistics(const std::vector<float>&vect );
@@ -26,8 +15,8 @@ namespace Statistics {
 typedef void (*funcptr)();
 void checkAndAlert(float maxThreshold, funcptr IAlerter[], struct Stats computedStats);
 
-extern bool emailAlertCallCount;
-extern bool ledAlertCallCount;
+extern bool emailAlertCall;
+extern bool ledAlertCall;
 void emailAlerter();
 void ledAlerter();
 
