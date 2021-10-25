@@ -34,7 +34,7 @@ public:
     StatsAlerter(const float Threshold,  std::vector<IAlerter*> vecAlertInit )
     {
         maximumThreshold =  Threshold;
-        vecAlert = vecAlertInit;
+        vecAlert         = vecAlertInit;
     }
     
     void checkAndAlert( const std::vector<float>& );
