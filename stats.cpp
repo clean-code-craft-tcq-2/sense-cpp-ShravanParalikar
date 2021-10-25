@@ -32,7 +32,7 @@ Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
     
 }
 
-void StatsAlerter::checkAndAlert( const std::vector<double>& vect)
+void StatsAlerter::checkAndAlert( const std::vector<float>& vect)
 {
     auto computedStats = Statistics::ComputeStatistics(vect);
     if(computedStats.max > maximumThreshold)
