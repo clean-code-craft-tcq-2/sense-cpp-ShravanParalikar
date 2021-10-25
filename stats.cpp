@@ -33,14 +33,14 @@ Stats Statistics::ComputeStatistics(const std::vector<float>&vect ) {
 }
 
 bool emailAlertCallCount {false};
-bool ledAlertCallCount   {true};
+bool ledAlertCallCount   {false};
 
-void checkAndAlert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
+void checkAndAlert(float maxThreshold, funcptr IAlerter[], struct Stats computedStats)
 {
     if(computedStats.max > maxThreshold)
     {
-        alerters[0]();
-	    alerters[1]();
+            IAlerter[0]();
+	    IAlerter[1]();
     }
 }
 
