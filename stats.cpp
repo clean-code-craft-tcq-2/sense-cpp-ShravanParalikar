@@ -38,7 +38,7 @@ void StatsAlerter::checkAndAlert( const std::vector<float>& vect)
     if(computedStats.max > maximumThreshold)
     {
         *(vecAlert[0]->emailAlertPtr) = {true};
-        *(vecAlert[0]->ledAlertPtr) = {true};
+        *(vecAlert[0]->ledAlertPtr)   = {true};
     }
 
 }
