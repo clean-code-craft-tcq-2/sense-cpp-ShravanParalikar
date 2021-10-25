@@ -8,7 +8,7 @@ struct Stats
    };
 
 namespace Statistics {
-    Stats ComputeStatistics(const std::vector<float>&vect );
+    Stats ComputeStatistics(const std::vector<float>& );
 }
 
 struct EmailAlert 
@@ -37,6 +37,6 @@ public:
         vecAlert = vecAlertInit;
     }
     
-    void checkAndAlert( const std::vector<double>&);
+    void checkAndAlert( const std::vector<double>& );
 };
 
