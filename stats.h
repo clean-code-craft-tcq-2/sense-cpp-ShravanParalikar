@@ -37,6 +37,6 @@ public:
         vecAlert = vecAlertInit;
     }
     
-    void checkAndAlert( const std::vector<double>& );
+    void checkAndAlert( const std::vector<float>& );
 };
 
